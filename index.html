@@ -30,6 +30,8 @@
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"><span></span></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
 
     <header class="topbar">
       <div class="wrap topbar-inner">
@@ -49,6 +51,7 @@
     <main id="main">
       <!-- Hero -->
       <section class="hero wrap" id="top">
+        <div class="hero-glow" aria-hidden="true"></div>
         <img
           class="portrait"
           src="assets/vedansh.webp"
@@ -58,8 +61,14 @@
         />
         <div class="hero-text">
         <p class="status"><span class="dot" aria-hidden="true"></span> Open to Java / Backend / Full Stack Developer roles</p>
-        <h1>Vedansh Trivedi</h1>
-        <p class="role">Java Full Stack Developer</p>
+        <h1 data-split>Vedansh Trivedi</h1>
+        <p class="role">
+          Java Full Stack Developer building with
+          <span class="frame"
+            ><span class="frame-word" data-words="Spring Boot|React|REST APIs|PostgreSQL|Spring Security|JWT">Spring Boot</span
+            ><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i
+          ></span>
+        </p>
         <p class="lede">
           I build secure, well-tested web applications with <strong>Java, Spring Boot and React</strong>: REST APIs,
           JWT authentication, relational data with JPA/Hibernate, and clean, responsive frontends. Computer Science
@@ -87,6 +96,20 @@
         </div>
       </section>
 
+      <!-- Skills marquee (decorative; the full list is in the Skills section) -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-row">
+          <div class="marquee-track">
+            <span>Java</span><b>✦</b><span>Spring Boot</span><b>✦</b><span>Spring Security</span><b>✦</b><span>JWT</span><b>✦</b><span>REST APIs</span><b>✦</b><span>Hibernate</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>MySQL</span><b>✦</b>
+          </div>
+        </div>
+        <div class="marquee-row reverse">
+          <div class="marquee-track">
+            <span>React</span><b>✦</b><span>TypeScript</span><b>✦</b><span>JavaScript</span><b>✦</b><span>Tailwind CSS</span><b>✦</b><span>TanStack Query</span><b>✦</b><span>Maven</span><b>✦</b><span>JUnit</span><b>✦</b><span>Git</span><b>✦</b>
+          </div>
+        </div>
+      </div>
+
       <!-- Featured project -->
       <section class="section wrap" id="projects" aria-labelledby="projects-h">
         <div class="section-head">
@@ -97,6 +120,13 @@
             and convert between 8 major currencies. Built end to end, from database schema to UI.
           </p>
         </div>
+
+        <dl class="stats">
+          <div><dt>Automated tests</dt><dd data-count="31">31</dd></div>
+          <div><dt>REST endpoints</dt><dd data-count="10">10</dd></div>
+          <div><dt>Currencies traded</dt><dd data-count="8">8</dd></div>
+          <div><dt>Money as <code>double</code></dt><dd data-count="0">0</dd></div>
+        </dl>
 
         <figure class="shot shot-main">
           <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -270,8 +300,9 @@
       <a href="#top">Back to top ↑</a>
     </footer>
 
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear()
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="main.js" defer></script>
   </body>
 </html>
