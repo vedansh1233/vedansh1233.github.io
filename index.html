@@ -11,7 +11,7 @@
     <meta property="og:title" content="Vedansh Trivedi · Java Full Stack Developer" />
     <meta
       property="og:description"
-      content="Spring Boot · React · REST APIs · PostgreSQL · Spring Security · JWT. See FX Desk, a full stack forex trading demo."
+      content="Spring Boot · React · REST APIs · PostgreSQL · Spring Security · JWT. See FX Desk, a full stack forex and crypto trading demo with live prices."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vedansh1233.github.io/" />
@@ -71,7 +71,8 @@
         </p>
         <p class="lede">
           I build secure, well-tested web applications with <strong>Java, Spring Boot and React</strong>: REST APIs,
-          JWT authentication, relational data with JPA/Hibernate, and clean, responsive frontends. Computer Science
+          JWT authentication, real-time data over WebSocket, relational data with JPA/Hibernate, and clean, responsive
+          frontends. Computer Science
           graduate (BCA, MCA) based in Noida, India.
         </p>
         <div class="actions">
@@ -100,7 +101,7 @@
       <div class="marquee" aria-hidden="true">
         <div class="marquee-row">
           <div class="marquee-track">
-            <span>Java</span><b>✦</b><span>Spring Boot</span><b>✦</b><span>Spring Security</span><b>✦</b><span>JWT</span><b>✦</b><span>REST APIs</span><b>✦</b><span>Hibernate</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>MySQL</span><b>✦</b>
+            <span>Java</span><b>✦</b><span>Spring Boot</span><b>✦</b><span>Spring Security</span><b>✦</b><span>JWT</span><b>✦</b><span>REST APIs</span><b>✦</b><span>Hibernate</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>WebSocket</span><b>✦</b><span>Flyway</span><b>✦</b>
           </div>
         </div>
         <div class="marquee-row reverse">
@@ -114,17 +115,18 @@
       <section class="section wrap" id="projects" aria-labelledby="projects-h">
         <div class="section-head">
           <p class="eyebrow">Featured project</p>
-          <h2 id="projects-h">FX Desk: a full stack forex trading platform</h2>
+          <h2 id="projects-h">FX Desk: a full stack forex and crypto trading platform</h2>
           <p class="section-sub">
-            A paper-trading app: sign up, receive a virtual $10,000 wallet, follow European Central Bank exchange rates
-            and convert between 8 major currencies. Built end to end, from database schema to UI.
+            A paper-trading app: sign up, get a virtual $10,000 wallet, and trade 8 major currencies and 5 cryptocurrencies
+            at live prices. Prices stream over WebSocket, limit orders fill automatically, and price alerts notify you.
+            Built end to end, from database migrations to UI.
           </p>
         </div>
 
         <dl class="stats">
-          <div><dt>Automated tests</dt><dd data-count="31">31</dd></div>
-          <div><dt>REST endpoints</dt><dd data-count="10">10</dd></div>
-          <div><dt>Currencies traded</dt><dd data-count="8">8</dd></div>
+          <div><dt>Automated tests</dt><dd data-count="51">51</dd></div>
+          <div><dt>REST endpoints + WebSocket</dt><dd data-count="21">21</dd></div>
+          <div><dt>Assets traded</dt><dd data-count="13">13</dd></div>
           <div><dt>Money as <code>double</code></dt><dd data-count="0">0</dd></div>
         </dl>
 
@@ -134,21 +136,21 @@
             src="assets/dashboard.webp"
             width="1440"
             height="900"
-            alt="FX Desk dashboard: total wallet value of $9,999.98, holdings in USD, EUR, GBP, JPY and CHF, and a list of recent conversions"
+            alt="FX Desk dashboard: a live crypto price ticker, a wallet worth $10,000.20 holding USD, EUR, GBP, BTC, ETH and SOL, and recent conversions"
           />
-          <figcaption>Portfolio dashboard: multi-currency holdings valued at the latest rates.</figcaption>
+          <figcaption>Dashboard: live crypto ticker over WebSocket and a multi-asset wallet valued in real time.</figcaption>
         </figure>
 
         <div class="shots-row">
           <figure class="shot">
             <img
-              src="assets/markets.webp"
+              src="assets/crypto.webp"
               width="1440"
               height="900"
               loading="lazy"
-              alt="FX Desk markets page: a one-month EUR/USD line chart and a table of EUR exchange rates"
+              alt="FX Desk crypto markets: a three-month Bitcoin price chart and live prices for BTC, ETH, SOL and XRP with 24-hour change"
             />
-            <figcaption>Markets: rates and a hand-built SVG price chart.</figcaption>
+            <figcaption>Crypto markets: live Coinbase prices and a hand-built SVG chart.</figcaption>
           </figure>
           <figure class="shot">
             <img
@@ -156,9 +158,29 @@
               width="1440"
               height="900"
               loading="lazy"
-              alt="FX Desk trade page: a form converting US dollars to euros with a live quote and current balances"
+              alt="FX Desk trade page: buying Bitcoin with 1,000 US dollars, with a live quote, balances, and an open limit order"
             />
-            <figcaption>Trade: live quote, balance checks, instant conversion.</figcaption>
+            <figcaption>Trade: market or limit orders on any pair, to 8 decimals.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/orders.webp"
+              width="1440"
+              height="900"
+              loading="lazy"
+              alt="FX Desk orders page: an open limit order with its distance to target, and two Bitcoin price alerts"
+            />
+            <figcaption>Orders and alerts: filled automatically by a background job.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/tools.webp"
+              width="1440"
+              height="900"
+              loading="lazy"
+              alt="FX Desk forex toolkit: a pip value calculator showing $10 per pip and a cross-rate table of 8 currencies"
+            />
+            <figcaption>Forex toolkit: calculators, cross rates, strength and correlation.</figcaption>
           </figure>
         </div>
 
@@ -167,20 +189,22 @@
             <h3>Backend · Spring Boot</h3>
             <ul class="ticks">
               <li>REST API with Java 21 and Spring Boot 3.5, documented with OpenAPI / Swagger UI</li>
+              <li>Real-time prices pushed over a <strong>WebSocket</strong>; live Coinbase and ECB data fetched in parallel on virtual threads, with caching and a labelled fallback when a source is down</li>
+              <li><strong>Limit orders and price alerts</strong> matched by scheduled jobs; row locks and conditional updates so a fill and a cancel can never both win</li>
+              <li>Safe money handling: <code>BigDecimal</code> with per-asset precision (8 decimals for crypto), rounding down so no money is created, one ledger service for every balance change</li>
               <li>Stateless auth with Spring Security and JWT; BCrypt passwords; consistent JSON error responses</li>
-              <li>Safe money handling: <code>BigDecimal</code>, a pessimistic row lock so concurrent trades can't overspend, rounding down so no money is created</li>
-              <li>Live ECB rates with caching and a graceful fallback when the rates provider is down</li>
-              <li>PostgreSQL with JPA/Hibernate; immutable transaction ledger with pagination</li>
-              <li>31 automated tests: MockMvc integration tests on H2 plus unit tests for the cache logic</li>
+              <li>PostgreSQL with JPA/Hibernate and <strong>Flyway</strong> migrations</li>
+              <li>51 automated tests: MockMvc integration tests, a real WebSocket test, and unit tests for the fallback logic</li>
             </ul>
           </article>
           <article class="card">
             <h3>Frontend · React</h3>
             <ul class="ticks">
               <li>React 19 + TypeScript (strict) with Vite and Tailwind CSS</li>
-              <li>Server state with TanStack Query; typed API client that mirrors the backend DTOs</li>
-              <li>Interactive SVG chart built from scratch: crosshair tooltip, keyboard navigation, screen-reader table</li>
-              <li>Protected routes, session restore and automatic logout on an expired token</li>
+              <li>One shared WebSocket feeding the TanStack Query cache, with reconnect backoff and polling fallback; prices flash as they tick</li>
+              <li>Interactive SVG charts built from scratch: crosshair tooltip, keyboard navigation, screen-reader table</li>
+              <li>Forex toolkit: pip value, position size and profit/loss calculators, cross-rate matrix, currency strength and correlation</li>
+              <li>Notification bell and toasts for triggered alerts; protected routes and session restore</li>
               <li>Field-level validation errors from the API; responsive layout down to phone width</li>
             </ul>
           </article>
@@ -204,11 +228,12 @@
             <ul class="tags">
               <li>Java</li><li>Spring Boot</li><li>Spring Security</li><li>JWT</li><li>REST APIs</li>
               <li>Jakarta Persistence (JPA)</li><li>Hibernate</li><li>JDBC</li><li>Bean Validation</li>
+              <li>WebSocket</li><li>Scheduled jobs</li><li>Virtual threads</li><li>Concurrency &amp; locking</li>
             </ul>
           </div>
           <div class="card">
             <h3>Databases</h3>
-            <ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>SQL</li><li>H2</li></ul>
+            <ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>SQL</li><li>H2</li><li>Flyway migrations</li></ul>
           </div>
           <div class="card">
             <h3>Frontend</h3>
