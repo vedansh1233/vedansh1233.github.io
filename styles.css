@@ -209,9 +209,27 @@ h4 {
   padding-bottom: 40px;
 }
 
+.portrait {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--border), var(--shadow);
+}
+
 @media (min-width: 900px) {
   .hero {
     padding-top: 104px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 56px;
+  }
+  .portrait {
+    order: 2;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 0;
   }
 }
 
