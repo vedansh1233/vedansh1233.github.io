@@ -16,6 +16,6 @@ To preview locally, open `index.html` in a browser, or run `npx serve .`.
 
 ## Featured project
 
-FX Desk, a full stack forex and crypto paper-trading platform. **[Live demo](https://web-production-e40695.up.railway.app)** ·
+FX Desk, a full stack forex and crypto paper-trading platform. **[Live demo](https://web-production-e40695.up.railway.app/welcome)** ·
 [backend (Spring Boot)](https://github.com/vedansh1233/forex-platform) ·
 [frontend (React)](https://github.com/vedansh1233/forex-platform-web)
