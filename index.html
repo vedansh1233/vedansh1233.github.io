@@ -126,8 +126,9 @@
           </p>
           <h2 id="projects-h">FX Desk: a full stack forex and crypto trading platform</h2>
           <p class="section-sub">
-            A paper-trading app: sign up, get a virtual $10,000 wallet, and trade 8 major currencies and 5 cryptocurrencies
-            at live prices. Prices stream over WebSocket, limit orders fill automatically, and price alerts notify you.
+            A paper-trading app with a virtual $10,000 wallet: trade 8 major currencies and 5 cryptocurrencies at live
+            prices. Prices stream over WebSocket, limit orders fill automatically, and price alerts notify you. Try it
+            with <strong>one click, no sign-up</strong>: the demo opens a funded account with a starter portfolio.
             Built end to end, from database migrations to UI.
           </p>
         </div>
@@ -145,12 +146,42 @@
             src="assets/dashboard.webp"
             width="1440"
             height="900"
-            alt="FX Desk dashboard: a live crypto price ticker, a wallet worth $10,000.20 holding USD, EUR, GBP, BTC, ETH and SOL, and recent conversions"
+            alt="FX Desk dashboard: a live crypto price ticker, a $9,999.99 demo wallet with an allocation bar across USD, EUR, BTC, ETH and SOL, and the start of the quick trade panel and watchlist"
           />
-          <figcaption>Dashboard: live crypto ticker over WebSocket and a multi-asset wallet valued in real time.</figcaption>
+          <figcaption>Dashboard: live ticker over WebSocket, a wallet valued in real time with its allocation, and trading right on the page.</figcaption>
         </figure>
 
         <div class="shots-row">
+          <figure class="shot">
+            <img
+              src="assets/landing.webp"
+              width="1440"
+              height="900"
+              loading="lazy"
+              alt="FX Desk landing page: the headline 'Trade the world's markets in real time', a Try the live demo button, a live Bitcoin price card with a 30-day chart, a scrolling price ticker and animated stats"
+            />
+            <figcaption>Landing page: live Bitcoin chart, scrolling ticker, and a one-click demo.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/actions.webp"
+              width="1440"
+              height="900"
+              loading="lazy"
+              alt="FX Desk dashboard actions: a quick trade panel buying ETH with 1,050 US dollars, a watchlist of five coins with 7-day sparklines and Buy, Sell and alert buttons, open orders and alerts with progress to target, and recent activity"
+            />
+            <figcaption>Quick trade, a watchlist with sparklines, and orders you can cancel in place.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/palette.webp"
+              width="1440"
+              height="900"
+              loading="lazy"
+              alt="FX Desk command palette opened with Ctrl K: searching 'btc' lists Buy BTC and Sell BTC with the live price, and Set a price alert on BTC"
+            />
+            <figcaption>Command palette (Ctrl K): jump anywhere, buy, sell or set an alert from the keyboard.</figcaption>
+          </figure>
           <figure class="shot">
             <img
               src="assets/crypto.webp"
@@ -160,16 +191,6 @@
               alt="FX Desk crypto markets: a three-month Bitcoin price chart and live prices for BTC, ETH, SOL and XRP with 24-hour change"
             />
             <figcaption>Crypto markets: live Coinbase prices and a hand-built SVG chart.</figcaption>
-          </figure>
-          <figure class="shot">
-            <img
-              src="assets/trade.webp"
-              width="1440"
-              height="900"
-              loading="lazy"
-              alt="FX Desk trade page: buying Bitcoin with 1,000 US dollars, with a live quote, balances, and an open limit order"
-            />
-            <figcaption>Trade: market or limit orders on any pair, to 8 decimals.</figcaption>
           </figure>
           <figure class="shot">
             <img
@@ -212,6 +233,10 @@
               <li>React 19 + TypeScript (strict) with Vite and Tailwind CSS</li>
               <li>One shared WebSocket feeding the TanStack Query cache, with reconnect backoff and polling fallback; prices flash as they tick</li>
               <li>Interactive SVG charts built from scratch: crosshair tooltip, keyboard navigation, screen-reader table</li>
+              <li><strong>One-click demo</strong>: creates a funded account with a starter portfolio, a limit order and an alert, then signs in</li>
+              <li>Dashboard you can trade from: quick buy/sell, a watchlist with 7-day sparklines and one-tap alerts, cancellable orders, and an allocation bar</li>
+              <li><strong>Command palette</strong> (Ctrl K) for pages, trades and alerts, fully keyboard-driven and accessible</li>
+              <li>Animated landing page: 3D-tilt price card, scroll reveals, count-up stats and an architecture diagram, with reduced-motion support</li>
               <li>Forex toolkit: pip value, position size and profit/loss calculators, cross-rate matrix, currency strength and correlation</li>
               <li>Notification bell and toasts for triggered alerts; protected routes and session restore</li>
               <li>Field-level validation errors from the API; responsive layout down to phone width</li>
@@ -222,7 +247,7 @@
         <div class="project-links">
           <a class="btn btn-primary" href="https://web-production-e40695.up.railway.app" target="_blank" rel="noopener">
             <span class="live-dot" aria-hidden="true"></span>
-            Try the live demo
+            Try the live demo (no sign-up)
           </a>
           <a class="btn" href="https://github.com/vedansh1233/forex-platform" target="_blank" rel="noopener">Backend source</a>
           <a class="btn" href="https://github.com/vedansh1233/forex-platform-web" target="_blank" rel="noopener">Frontend source</a>
