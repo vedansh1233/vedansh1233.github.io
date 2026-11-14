@@ -500,6 +500,63 @@ h4 {
   margin-top: 24px;
 }
 
+/* More projects */
+.more-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 56px 0 18px;
+}
+
+.more-projects {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 720px) {
+  .more-projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .more-projects {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card.mini {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card.mini h3 {
+  margin: 0;
+}
+
+.mini-kicker {
+  margin: 0;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.mini-desc {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.card.mini .ticks li {
+  font-size: 14px;
+}
+
+.mini-link {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 /* Skills */
 .skills-grid {
   display: grid;
