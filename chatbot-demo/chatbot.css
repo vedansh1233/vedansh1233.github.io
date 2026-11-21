@@ -8,7 +8,7 @@
 .cb-badge { position: absolute; top: -2px; right: -2px; background: #e74c3c; color: #fff; font-size: 12px; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; }
 .cb-panel { width: 370px; height: min(560px, calc(100vh - 120px)); background: var(--cb-bg); color: var(--cb-text); border-radius: 18px; overflow: hidden;
   box-shadow: 0 18px 50px rgba(0,0,0,.25); display: flex; flex-direction: column; margin-bottom: 14px; animation: cb-in .22s ease-out; }
-.cb-panel[hidden] { display: none; }
+.cb-panel[hidden], .cb-badge[hidden] { display: none; }
 @keyframes cb-in { from { opacity: 0; transform: translateY(12px) scale(.98); } }
 .cb-head { background: var(--cb-brand); color: var(--cb-brand-ink); padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
 .cb-head b { display: block; font-size: 15px; }
