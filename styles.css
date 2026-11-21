@@ -518,12 +518,6 @@ h4 {
   }
 }
 
-@media (min-width: 1000px) {
-  .more-projects {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
 .card.mini {
   display: flex;
   flex-direction: column;
