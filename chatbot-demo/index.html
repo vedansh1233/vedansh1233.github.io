@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brew &amp; Bean Café · Chatbot demo</title>
+  <meta name="description" content="Demo of a website FAQ chatbot widget by Vedansh Trivedi.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+  <div class="ribbon">
+    <div class="wrap">
+      <span>💬 <b>Demo:</b> FAQ chatbot widget by <a href="../">Vedansh Trivedi</a>. Click the chat bubble, bottom right.</span>
+      <span class="swatches" aria-label="Try a brand colour">Brand colour:
+        <button style="background:#7a4b2a" data-color="#7a4b2a" aria-pressed="true" aria-label="Brown"></button>
+        <button style="background:#1f6f5c" data-color="#1f6f5c" aria-pressed="false" aria-label="Green"></button>
+        <button style="background:#2f5bd3" data-color="#2f5bd3" aria-pressed="false" aria-label="Blue"></button>
+        <button style="background:#b8325a" data-color="#b8325a" aria-pressed="false" aria-label="Pink"></button>
+      </span>
+    </div>
+  </div>
+
+  <nav class="top">
+    <div class="wrap">
+      <a class="logo" href="index.html">Brew &amp; Bean</a>
+      <div class="links">
+        <a href="#menu">Menu</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn" href="#" data-open-chat>Book a table</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Fresh coffee, baked every morning.</h1>
+        <p>A neighbourhood café on MG Road serving specialty coffee, all-day breakfast and homemade cakes, with free Wi-Fi and plenty of plugs.</p>
+        <div class="cta">
+          <a class="btn" href="#menu">See the menu</a>
+          <a class="btn ghost" href="#" data-open-chat>Ask us anything</a>
+        </div>
+      </div>
+      <div class="art" aria-hidden="true">☕</div>
+    </section>
+
+    <section id="menu">
+      <h2>Customer favourites</h2>
+      <div class="cards">
+        <div class="card"><b>☕</b><h3>Cold brew <span class="price">₹180</span></h3><p>Steeped 18 hours, smooth and low in acidity.</p></div>
+        <div class="card"><b>🥐</b><h3>Butter croissant <span class="price">₹120</span></h3><p>Baked fresh every morning, flaky and golden.</p></div>
+        <div class="card"><b>🍌</b><h3>Vegan banana bread <span class="price">₹140</span></h3><p>No dairy, no eggs, still the best seller. 🌱</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Brew &amp; Bean is a fictional café for this demo · <a href="faq.html">FAQ</a> · Built by <a href="../">Vedansh Trivedi</a></div>
+  </footer>
+
+  <script src="chatbot.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
